@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react/cjs/react.development";
+import "./App.css";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+    {/* <Route> */}
+      <Navbar title="Textutils" aboutText="About Us" mode={darkMode} />
+      <div className="container">
+      <TextForm heading="Enter the text"/>       
+      {/* <Switch>
+          <Route path="/About">
+            <About />
+          </Route>
+        </Switch> */}
+      </div>
+    {/* </Route> */}
+    </>
   );
 }
 
